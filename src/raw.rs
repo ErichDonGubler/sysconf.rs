@@ -26,6 +26,7 @@ macro_rules! sc { ($var:ident) => (libc::$var as isize) }
 ///
 /// Different variables may have been added at different times, and as a result, some variables
 /// may not be supported on older systems. In these cases, `sysconf` will return an error.
+#[derive(Debug)]
 pub enum SysconfVariable {
     ScArgMax = sc!(_SC_ARG_MAX),
     ScChildMax = sc!(_SC_CHILD_MAX),
